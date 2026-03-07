@@ -31,3 +31,4 @@ All data is saved locally in the browser localStorage. No server is required.
 2. Go to Settings -> Pages.
 3. Select the `main` branch and `/root` folder.
 4. Save. GitHub will provide the public URL.
+...
