@@ -425,6 +425,42 @@
       gap: 6px;
     }
 
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .info-list li {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      display: grid;
+      gap: 6px;
+    }
+
+    .info-list li b {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      background: rgba(124, 58, 237, 0.25);
+      color: #e9d5ff;
+      border: 1px solid rgba(124, 58, 237, 0.4);
+    }
+
     .version-item {
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -519,7 +555,6 @@
           <p>Bu cihazda kullanıcı girişi ile snippet’lerini sakla, ara ve yönet.</p>
         </div>
         <div class="hero-actions">
-          <button id="infoBtn" class="icon-btn" type="button">Bilgi</button>
           <button id="themeToggle" class="theme-toggle" type="button">Aydınlık Tema</button>
         </div>
       </div>
@@ -625,28 +660,32 @@
               <div><b>Hızlı Akış:</b> Snippet ekle → Etiketle → Favoriye al → Koleksiyona koy.</div>
               <div><b>Yedek:</b> JSON dışa aktar ile tek dosyada yedek al.</div>
             </div>
-            <div class="info-split">
-              <div class="info-pill">
-                <b>Arama</b>
-                <div>Başlık, etiket, koleksiyon ve koda göre.</div>
-              </div>
-              <div class="info-pill">
-                <b>Favoriler</b>
-                <div>★ ile işaretle, tek tıkla filtrele.</div>
-              </div>
-              <div class="info-pill">
-                <b>Sürüm</b>
-                <div>Düzenle → geçmiş sürümler saklanır.</div>
-              </div>
-              <div class="info-pill">
-                <b>Çöp Kutusu</b>
-                <div>Silinenler geri yüklenebilir.</div>
-              </div>
-            </div>
-            <div class="info-rows">
-              <div><b>Kısayollar:</b> <kbd>Ctrl</kbd>+<kbd>K</kbd> arama, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> ekle.</div>
-            </div>
-            <button class="icon-btn" data-open-info type="button">Bilgi Penceresi</button>
+            <ul class="info-list">
+              <li>
+                <b><span class="info-icon">🔎</span>Arama</b>
+                <div>Başlık, etiket, koleksiyon ve koda göre arama yap.</div>
+              </li>
+              <li>
+                <b><span class="info-icon">★</span>Favoriler</b>
+                <div>★ ile işaretle, tek tıkla favori filtresi uygula.</div>
+              </li>
+              <li>
+                <b><span class="info-icon">⏱</span>Sürüm Geçmişi</b>
+                <div>Düzenleme yaptığında önceki kod sürümleri saklanır.</div>
+              </li>
+              <li>
+                <b><span class="info-icon">🗑</span>Çöp Kutusu</b>
+                <div>Silinen snippet’leri geri yükleyebilirsin.</div>
+              </li>
+              <li>
+                <b><span class="info-icon">⌨</span>Kısayollar</b>
+                <div><kbd>Ctrl</kbd>+<kbd>K</kbd> arama, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> ekle, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> favori filtresi.</div>
+              </li>
+              <li>
+                <b><span class="info-icon">💾</span>Yedek</b>
+                <div>JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.</div>
+              </li>
+            </ul>
           </article>
         </div>
       </section>
@@ -670,36 +709,6 @@
   </div>
 
   <div id="toast" class="toast">Kaydedildi</div>
-
-  <div id="infoModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 class="section-title">Kullanım + Kısayollar</h3>
-        <button id="infoClose" class="mini-btn" type="button">Kapat</button>
-      </div>
-      <div class="grid" style="gap:12px;">
-        <div class="card" style="box-shadow:none;">
-          <b>Hızlı Kullanım</b>
-          <ul class="muted" style="padding-left:18px; margin:8px 0 0;">
-            <li>Snippet eklerken başlık, dil ve kod zorunlu. Etiket ve koleksiyon isteğe bağlı.</li>
-            <li>Favori yıldızı ile sık kullandıklarını öne çıkar.</li>
-            <li>Silinen snippet’ler çöp kutusundan geri yüklenebilir.</li>
-            <li>JSON dışa aktar ile yedek al, içe aktar ile geri yükle.</li>
-          </ul>
-        </div>
-        <div class="card" style="box-shadow:none;">
-          <b>Klavye Kısayolları</b>
-          <div class="muted" style="display:grid; gap:6px; margin-top:8px;">
-            <div><kbd>Ctrl</kbd> + <kbd>K</kbd> Arama kutusuna odaklanır.</div>
-            <div><kbd>Ctrl</kbd> + <kbd>Enter</kbd> Snippet ekler.</div>
-            <div><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> Favori filtresini aç/kapatır.</div>
-            <div><kbd>?</kbd> Bilgi penceresini açar.</div>
-            <div><kbd>Esc</kbd> Açık pencereleri kapatır.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div id="editModal" class="modal hidden" aria-hidden="true">
     <div class="modal-card">
@@ -790,10 +799,6 @@
     const els = {
       authSection: document.getElementById("authSection"),
       appSection: document.getElementById("appSection"),
-      infoBtn: document.getElementById("infoBtn"),
-      infoModal: document.getElementById("infoModal"),
-      infoClose: document.getElementById("infoClose"),
-      infoOpenBtns: document.querySelectorAll("[data-open-info]"),
       editModal: document.getElementById("editModal"),
       editClose: document.getElementById("editClose"),
       editTitle: document.getElementById("editTitle"),
@@ -1016,7 +1021,6 @@
       state.store.session = null;
       saveStore();
       state.user = null;
-      closeInfoModal();
       closeEditModal();
       showAuth();
     }
@@ -1202,16 +1206,6 @@
       renderRecommendations();
       renderRecommendPreview();
       renderTrash();
-    }
-
-    function openInfoModal() {
-      els.infoModal.classList.remove("hidden");
-      els.infoModal.setAttribute("aria-hidden", "false");
-    }
-
-    function closeInfoModal() {
-      els.infoModal.classList.add("hidden");
-      els.infoModal.setAttribute("aria-hidden", "true");
     }
 
     function openEditModal(snippet) {
@@ -1522,15 +1516,6 @@
       showToast("Sürüm kodu alındı");
     });
 
-    if (els.infoBtn) {
-      els.infoBtn.addEventListener("click", openInfoModal);
-    }
-    els.infoOpenBtns.forEach(btn => btn.addEventListener("click", openInfoModal));
-    els.infoClose.addEventListener("click", closeInfoModal);
-    els.infoModal.addEventListener("click", (event) => {
-      if (event.target === els.infoModal) closeInfoModal();
-    });
-
     els.editModal.addEventListener("click", (event) => {
       if (event.target === els.editModal) closeEditModal();
     });
@@ -1558,13 +1543,8 @@
     document.addEventListener("keydown", (event) => {
       const isTyping = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName);
       if (event.key === "Escape") {
-        closeInfoModal();
         closeEditModal();
         return;
-      }
-      if (event.key === "?" && !isTyping) {
-        event.preventDefault();
-        openInfoModal();
       }
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
