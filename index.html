@@ -619,6 +619,7 @@
               </select>
               <textarea id="codeInput" placeholder="Kodunu buraya yaz..."></textarea>
               <button id="addSnippetBtn">Snippet Ekle</button>
+              <div id="formInfo" class="muted"></div>
             </div>
 
             <h3 class="section-title" style="margin-top:16px;">Filtre + Arama</h3>
@@ -827,6 +828,7 @@
       colorInput: document.getElementById("colorInput"),
       codeInput: document.getElementById("codeInput"),
       addSnippetBtn: document.getElementById("addSnippetBtn"),
+      formInfo: document.getElementById("formInfo"),
       searchInput: document.getElementById("searchInput"),
       filters: document.getElementById("filters"),
       collectionFilter: document.getElementById("collectionFilter"),
@@ -1287,7 +1289,15 @@
       const tags = parseTags(els.tagsInput.value);
       const collection = els.collectionInput.value.trim();
       const color = els.colorInput.value || "#7c3aed";
-      if (!title || !language || !code) return;
+      const missing = [];
+      if (!title) missing.push("başlık");
+      if (!language) missing.push("dil");
+      if (!code) missing.push("kod");
+      if (missing.length) {
+        setInfo(els.formInfo, `Lütfen ${missing.join(", ")} alanını doldur.`, false);
+        return;
+      }
+      setInfo(els.formInfo, "");
       addSnippet({ title, language, code, tags, collection, color });
       els.titleInput.value = "";
       els.languageInput.value = "";
@@ -1541,7 +1551,6 @@
     window.addEventListener("scroll", maybeLoadMore);
 
     document.addEventListener("keydown", (event) => {
-      const isTyping = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName);
       if (event.key === "Escape") {
         closeEditModal();
         return;
