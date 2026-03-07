@@ -398,6 +398,33 @@
       font-size: 0.95rem;
     }
 
+    .info-rows {
+      display: grid;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .info-rows b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .info-split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .info-pill {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      background: var(--surface-soft);
+      display: grid;
+      gap: 6px;
+    }
+
     .version-item {
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -594,7 +621,31 @@
           </article>
           <article class="card info-card">
             <h3 class="section-title">Bilgilendirme</h3>
-            <div class="muted">Kısayolları ve hızlı kullanım ipuçlarını görmek için bilgi penceresini aç.</div>
+            <div class="info-rows">
+              <div><b>Hızlı Akış:</b> Snippet ekle → Etiketle → Favoriye al → Koleksiyona koy.</div>
+              <div><b>Yedek:</b> JSON dışa aktar ile tek dosyada yedek al.</div>
+            </div>
+            <div class="info-split">
+              <div class="info-pill">
+                <b>Arama</b>
+                <div>Başlık, etiket, koleksiyon ve koda göre.</div>
+              </div>
+              <div class="info-pill">
+                <b>Favoriler</b>
+                <div>★ ile işaretle, tek tıkla filtrele.</div>
+              </div>
+              <div class="info-pill">
+                <b>Sürüm</b>
+                <div>Düzenle → geçmiş sürümler saklanır.</div>
+              </div>
+              <div class="info-pill">
+                <b>Çöp Kutusu</b>
+                <div>Silinenler geri yüklenebilir.</div>
+              </div>
+            </div>
+            <div class="info-rows">
+              <div><b>Kısayollar:</b> <kbd>Ctrl</kbd>+<kbd>K</kbd> arama, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> ekle.</div>
+            </div>
             <button class="icon-btn" data-open-info type="button">Bilgi Penceresi</button>
           </article>
         </div>
