@@ -461,6 +461,20 @@
       border: 1px solid rgba(124, 58, 237, 0.4);
     }
 
+    .feedback-card form {
+      display: grid;
+      gap: 8px;
+    }
+
+    .feedback-card textarea {
+      min-height: 120px;
+    }
+
+    .feedback-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
     .version-item {
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -688,6 +702,16 @@
                 <div id="infoBackupDesc">JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.</div>
               </li>
             </ul>
+          </article>
+          <article class="card feedback-card">
+            <h3 class="section-title">Geri Bildirim</h3>
+            <form action="https://formspree.io/f/mojkvrqp" method="POST">
+              <input type="text" name="name" placeholder="Ad Soyad" required />
+              <input type="email" name="email" placeholder="E-posta" required />
+              <textarea name="message" placeholder="Mesajın..." required></textarea>
+              <button type="submit">Gönder</button>
+              <div class="feedback-note">Gönderimler Formspree üzerinden e-postana iletilir.</div>
+            </form>
           </article>
         </div>
       </section>
