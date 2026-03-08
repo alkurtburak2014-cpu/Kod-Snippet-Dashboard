@@ -144,6 +144,13 @@
     button.secondary { background: linear-gradient(130deg, #1f2937, #334155); }
     button.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
 
+    .cta-btn {
+      background: linear-gradient(130deg, var(--accent-2), #0ea5e9);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+    }
+
     .muted { color: var(--muted); font-size: 0.9rem; }
     .hidden { display: none !important; }
 
@@ -1520,7 +1527,7 @@
           <div><b>${escapeHtml(item.title)}</b> <span class="badge">${escapeHtml(item.language)}</span></div>
           <p>${escapeHtml(item.description)}</p>
           <pre><code>${escapeHtml(item.code)}</code></pre>
-          <button class="ghost" data-add-reco="${item.title}">${t("addFromReco")}</button>
+          <button class="cta-btn" data-add-reco="${item.title}">${t("addFromReco")}</button>
         </div>
       `).join("");
 
@@ -1536,7 +1543,7 @@
           <div><b>${escapeHtml(item.title)}</b> <span class="badge">${escapeHtml(item.language)}</span></div>
           <p>${escapeHtml(item.description)}</p>
           <pre><code>${escapeHtml(item.code)}</code></pre>
-          <button class="ghost" data-add-reco="${item.title}">${t("addFromReco")}</button>
+          <button class="cta-btn" data-add-reco="${item.title}">${t("addFromReco")}</button>
         </div>
       `).join("");
     }
