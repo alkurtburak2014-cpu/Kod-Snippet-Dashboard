@@ -704,12 +704,12 @@
             </ul>
           </article>
           <article class="card feedback-card">
-            <h3 class="section-title">Geri Bildirim</h3>
+            <h3 id="feedbackTitle" class="section-title">Geri Bildirim</h3>
             <form action="https://formspree.io/f/mojkvrqp" method="POST">
-              <input type="text" name="name" placeholder="Ad Soyad" required />
-              <input type="email" name="email" placeholder="E-posta" required />
-              <textarea name="message" placeholder="Mesajın..." required></textarea>
-              <button type="submit">Gönder</button>
+              <input id="feedbackName" type="text" name="name" placeholder="Ad Soyad" required />
+              <input id="feedbackEmail" type="email" name="email" placeholder="E-posta" required />
+              <textarea id="feedbackMessage" name="message" placeholder="Mesajın..." required></textarea>
+              <button id="feedbackSubmit" type="submit">Gönder</button>
             </form>
           </article>
         </div>
@@ -829,6 +829,11 @@
         infoShortcutsDesc: "Ctrl+K arama, Ctrl+Enter ekle, Ctrl+Shift+F favori filtresi.",
         infoBackupTitle: "Yedek",
         infoBackupDesc: "JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.",
+        feedbackTitle: "Geri Bildirim",
+        feedbackNamePlaceholder: "Ad Soyad",
+        feedbackEmailPlaceholder: "E-posta",
+        feedbackMessagePlaceholder: "Mesajın...",
+        feedbackSubmit: "Gönder",
         trashTitle: "Çöp Kutusu",
         editSnippet: "Snippet Düzenle",
         close: "Kapat",
@@ -922,6 +927,11 @@
         infoShortcutsDesc: "Ctrl+K search, Ctrl+Enter add, Ctrl+Shift+F favorites filter.",
         infoBackupTitle: "Backup",
         infoBackupDesc: "Backup and restore with JSON export/import.",
+        feedbackTitle: "Feedback",
+        feedbackNamePlaceholder: "Full name",
+        feedbackEmailPlaceholder: "Email",
+        feedbackMessagePlaceholder: "Your message...",
+        feedbackSubmit: "Send",
         trashTitle: "Trash",
         editSnippet: "Edit Snippet",
         close: "Close",
@@ -1110,6 +1120,11 @@
       infoShortcutsDesc: document.getElementById("infoShortcutsDesc"),
       infoBackupTitle: document.getElementById("infoBackupTitle"),
       infoBackupDesc: document.getElementById("infoBackupDesc"),
+      feedbackTitle: document.getElementById("feedbackTitle"),
+      feedbackName: document.getElementById("feedbackName"),
+      feedbackEmail: document.getElementById("feedbackEmail"),
+      feedbackMessage: document.getElementById("feedbackMessage"),
+      feedbackSubmit: document.getElementById("feedbackSubmit"),
       trashTitle: document.getElementById("trashTitle"),
       editTitleLabel: document.getElementById("editTitleLabel"),
       versionHistoryLabel: document.getElementById("versionHistoryLabel"),
@@ -1193,6 +1208,11 @@
       els.infoShortcutsDesc.textContent = t("infoShortcutsDesc");
       els.infoBackupTitle.textContent = t("infoBackupTitle");
       els.infoBackupDesc.textContent = t("infoBackupDesc");
+      els.feedbackTitle.textContent = t("feedbackTitle");
+      els.feedbackName.placeholder = t("feedbackNamePlaceholder");
+      els.feedbackEmail.placeholder = t("feedbackEmailPlaceholder");
+      els.feedbackMessage.placeholder = t("feedbackMessagePlaceholder");
+      els.feedbackSubmit.textContent = t("feedbackSubmit");
       els.trashTitle.textContent = t("trashTitle");
       els.editTitleLabel.textContent = t("editSnippet");
       els.editClose.textContent = t("close");
