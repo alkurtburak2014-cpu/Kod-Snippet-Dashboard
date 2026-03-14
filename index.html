@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
@@ -172,13 +172,11 @@
       font-size: 0.85rem;
     }
 
-    .stat-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 10px;
     }
 
-    .stat-card {
       background: var(--panel-2);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -187,7 +185,6 @@
       gap: 4px;
     }
 
-    .stat-card b { font-size: 1.3rem; }
 
     .muted { color: var(--muted); font-size: 0.9rem; }
     .hidden { display: none !important; }
@@ -611,31 +608,31 @@
       <div class="hero-top">
         <div>
           <h1 id="heroTitle">Kod Snippet Dashboard</h1>
-          <p id="heroDesc">Bu cihazda kullanıcı girişi ile snippet’lerini sakla, ara ve yönet.</p>
+          <p id="heroDesc">Bu cihazda kullanÄ±cÄ± giriÅŸi ile snippetâ€™lerini sakla, ara ve yÃ¶net.</p>
         </div>
         <div class="hero-actions">
-          <button id="themeToggle" class="theme-toggle" type="button">Aydınlık Tema</button>
+          <button id="themeToggle" class="theme-toggle" type="button">AydÄ±nlÄ±k Tema</button>
           <button id="langToggle" class="theme-toggle" type="button">English</button>
         </div>
       </div>
     </header>
     <section id="authSection" class="grid auth-grid view">
       <article class="card">
-        <h2 id="registerTitle">Kayıt Ol</h2>
+        <h2 id="registerTitle">KayÄ±t Ol</h2>
         <div class="field">
-          <input id="regUsername" placeholder="Kullanıcı adı" />
-          <input id="regPassword" type="password" placeholder="Şifre" />
-          <button id="registerBtn">Kayıt Ol</button>
+          <input id="regUsername" placeholder="KullanÄ±cÄ± adÄ±" />
+          <input id="regPassword" type="password" placeholder="Åifre" />
+          <button id="registerBtn">KayÄ±t Ol</button>
           <div id="regInfo" class="muted"></div>
         </div>
       </article>
 
       <article class="card">
-        <h2 id="loginTitle">Giriş Yap</h2>
+        <h2 id="loginTitle">GiriÅŸ Yap</h2>
         <div class="field">
-          <input id="loginUsername" placeholder="Kullanıcı adı" />
-          <input id="loginPassword" type="password" placeholder="Şifre" />
-          <button id="loginBtn">Giriş</button>
+          <input id="loginUsername" placeholder="KullanÄ±cÄ± adÄ±" />
+          <input id="loginPassword" type="password" placeholder="Åifre" />
+          <button id="loginBtn">GiriÅŸ</button>
           <div id="loginInfo" class="muted"></div>
         </div>
       </article>
@@ -647,9 +644,9 @@
           <div class="muted" id="welcome"></div>
           <div class="nav">
             <button id="navDashboard" class="nav-btn active" data-page="dashboard">Dashboard</button>
-            <button id="navRecommend" class="nav-btn" data-page="recommend">Öneriler</button>
-            <button id="navTrash" class="nav-btn" data-page="trash">Çöp Kutusu</button>
-            <button id="logoutBtn" class="secondary">Çıkış</button>
+            <button id="navRecommend" class="nav-btn" data-page="recommend">Ã–neriler</button>
+            <button id="navTrash" class="nav-btn" data-page="trash">Ã‡Ã¶p Kutusu</button>
+            <button id="logoutBtn" class="secondary">Ã‡Ä±kÄ±ÅŸ</button>
           </div>
         </div>
       </article>
@@ -659,21 +656,21 @@
           <aside class="card">
             <h3 id="addSnippetTitle" class="section-title">Snippet Ekle</h3>
             <div class="field">
-              <input id="titleInput" placeholder="Snippet başlığı" />
+              <input id="titleInput" placeholder="Snippet baÅŸlÄ±ÄŸÄ±" />
               <select id="languageInput">
-                <option value="">Dil seç</option>
+                <option value="">Dil seÃ§</option>
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
                 <option value="JavaScript">JavaScript</option>
                 <option value="Python">Python</option>
                 <option value="SQL">SQL</option>
               </select>
-              <input id="tagsInput" placeholder="Etiketler (örn: api, ui, auth)" />
-              <input id="collectionInput" placeholder="Koleksiyon adı (opsiyonel)" />
+              <input id="tagsInput" placeholder="Etiketler (Ã¶rn: api, ui, auth)" />
+              <input id="collectionInput" placeholder="Koleksiyon adÄ± (opsiyonel)" />
               <select id="colorInput">
                 <option value="#7c3aed">Renk: Mor</option>
                 <option value="#0ea5e9">Renk: Mavi</option>
-                <option value="#22c55e">Renk: Yeşil</option>
+                <option value="#22c55e">Renk: YeÅŸil</option>
                 <option value="#f97316">Renk: Turuncu</option>
                 <option value="#f43f5e">Renk: Pembe</option>
               </select>
@@ -683,12 +680,12 @@
             </div>
 
             <h3 id="filterTitle" class="section-title" style="margin-top:16px;">Filtre + Arama</h3>
-            <input id="searchInput" placeholder="Örn: Flexbox kodu veya API fetch fonksiyonu" />
+            <input id="searchInput" placeholder="Ã–rn: Flexbox kodu veya API fetch fonksiyonu" />
             <div id="filters" class="filters" style="margin-top:8px;"></div>
             <div class="filters" style="margin-top:8px;">
               <button id="favoriteToggle" class="chip" type="button">Favoriler</button>
               <select id="collectionFilter" style="min-width:160px;">
-                <option value="Tümü">Koleksiyon: Tümü</option>
+                <option value="TÃ¼mÃ¼">Koleksiyon: TÃ¼mÃ¼</option>
               </select>
             </div>
 
@@ -698,68 +695,53 @@
             </div>
 
             <div class="file-actions">
-              <button id="exportBtn" class="secondary" type="button">JSON Dışa Aktar</button>
-              <button id="importBtn" class="ghost" type="button">JSON İçe Aktar</button>
+              <button id="exportBtn" class="secondary" type="button">JSON DÄ±ÅŸa Aktar</button>
+              <button id="importBtn" class="ghost" type="button">JSON Ä°Ã§e Aktar</button>
               <input id="importInput" type="file" accept="application/json" class="hidden" />
             </div>
           </aside>
 
           <main class="card">
-            <h3 id="snippetsTitle" class="section-title">Snippet’ler</h3>
-            <div class="stat-grid" style="margin-bottom:10px;">
-              <div class="stat-card">
-                <span>Toplam</span>
-                <b id="statTotal">0</b>
-              </div>
-              <div class="stat-card">
-                <span>Favoriler</span>
-                <b id="statFavorites">0</b>
-              </div>
-              <div class="stat-card">
-                <span>Çöp</span>
-                <b id="statTrash">0</b>
-              </div>
-            </div>
-            <button id="undoDeleteBtn" class="ghost" type="button" style="margin-bottom:10px;">Son silineni geri al</button>
+            <h3 id="snippetsTitle" class="section-title">Snippetler</h3>
             <div id="snippetList" class="snippet-list"></div>
           </main>
         </div>
 
         <div class="two-col" style="margin-top:16px;">
           <article class="card">
-            <h3 id="recommendedTitle" class="section-title">Önerilen Parçacıklar</h3>
+            <h3 id="recommendedTitle" class="section-title">Ã–nerilen ParÃ§acÄ±klar</h3>
             <div id="recommendPreview" class="recommend-list"></div>
           </article>
           <article class="card info-card">
             <h3 id="infoTitle" class="section-title">Bilgilendirme</h3>
             <div class="info-rows">
-              <div><b id="infoQuickFlowLabel">Hızlı Akış:</b> <span id="infoQuickFlowDesc">Snippet ekle → Etiketle → Favoriye al → Koleksiyona koy.</span></div>
-              <div><b id="infoBackupFlowLabel">Yedek:</b> <span id="infoBackupFlowDesc">JSON dışa aktar ile tek dosyada yedek al.</span></div>
+              <div><b id="infoQuickFlowLabel">HÄ±zlÄ± AkÄ±ÅŸ:</b> <span id="infoQuickFlowDesc">Snippet ekle â†’ Etiketle â†’ Favoriye al â†’ Koleksiyona koy.</span></div>
+              <div><b id="infoBackupFlowLabel">Yedek:</b> <span id="infoBackupFlowDesc">JSON dÄ±ÅŸa aktar ile tek dosyada yedek al.</span></div>
             </div>
             <ul class="info-list">
               <li>
-                <b><span class="info-icon">🔎</span><span id="infoSearchTitle">Arama</span></b>
-                <div id="infoSearchDesc">Başlık, etiket, koleksiyon ve koda göre arama yap.</div>
+                <b><span class="info-icon">ğŸ”</span><span id="infoSearchTitle">Arama</span></b>
+                <div id="infoSearchDesc">BaÅŸlÄ±k, etiket, koleksiyon ve koda gÃ¶re arama yap.</div>
               </li>
               <li>
-                <b><span class="info-icon">★</span><span id="infoFavoritesTitle">Favoriler</span></b>
-                <div id="infoFavoritesDesc">★ ile işaretle, tek tıkla favori filtresi uygula.</div>
+                <b><span class="info-icon">â˜…</span><span id="infoFavoritesTitle">Favoriler</span></b>
+                <div id="infoFavoritesDesc">â˜… ile iÅŸaretle, tek tÄ±kla favori filtresi uygula.</div>
               </li>
               <li>
-                <b><span class="info-icon">⏱</span><span id="infoVersionTitle">Sürüm Geçmişi</span></b>
-                <div id="infoVersionDesc">Düzenleme yaptığında önceki kod sürümleri saklanır.</div>
+                <b><span class="info-icon">â±</span><span id="infoVersionTitle">SÃ¼rÃ¼m GeÃ§miÅŸi</span></b>
+                <div id="infoVersionDesc">DÃ¼zenleme yaptÄ±ÄŸÄ±nda Ã¶nceki kod sÃ¼rÃ¼mleri saklanÄ±r.</div>
               </li>
               <li>
-                <b><span class="info-icon">🗑</span><span id="infoTrashTitle">Çöp Kutusu</span></b>
-                <div id="infoTrashDesc">Silinen snippet’leri geri yükleyebilirsin.</div>
+                <b><span class="info-icon">ğŸ—‘</span><span id="infoTrashTitle">Ã‡Ã¶p Kutusu</span></b>
+                <div id="infoTrashDesc">Silinen snippetâ€™leri geri yÃ¼kleyebilirsin.</div>
               </li>
               <li>
-                <b><span class="info-icon">⌨</span><span id="infoShortcutsTitle">Kısayollar</span></b>
+                <b><span class="info-icon">âŒ¨</span><span id="infoShortcutsTitle">KÄ±sayollar</span></b>
                 <div id="infoShortcutsDesc"><kbd>Ctrl</kbd>+<kbd>K</kbd> arama, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> ekle, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> favori filtresi.</div>
               </li>
               <li>
-                <b><span class="info-icon">💾</span><span id="infoBackupTitle">Yedek</span></b>
-                <div id="infoBackupDesc">JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.</div>
+                <b><span class="info-icon">ğŸ’¾</span><span id="infoBackupTitle">Yedek</span></b>
+                <div id="infoBackupDesc">JSON dÄ±ÅŸa aktar/Ä°Ã§e aktar ile yedek al ve geri yÃ¼kle.</div>
               </li>
             </ul>
           </article>
@@ -768,8 +750,8 @@
             <form action="https://formspree.io/f/mojkvrqp" method="POST">
               <input id="feedbackName" type="text" name="name" placeholder="Ad Soyad" required />
               <input id="feedbackEmail" type="email" name="email" placeholder="E-posta" required />
-              <textarea id="feedbackMessage" name="message" placeholder="Mesajın..." required></textarea>
-              <button id="feedbackSubmit" type="submit">Gönder</button>
+              <textarea id="feedbackMessage" name="message" placeholder="MesajÄ±n..." required></textarea>
+              <button id="feedbackSubmit" type="submit">GÃ¶nder</button>
             </form>
           </article>
         </div>
@@ -777,7 +759,7 @@
 
       <section id="page-recommend" class="page">
         <article class="card">
-          <h3 id="recommendedPageTitle" class="section-title">Önerilen Parçacıklar</h3>
+          <h3 id="recommendedPageTitle" class="section-title">Ã–nerilen ParÃ§acÄ±klar</h3>
           <div id="recoFilters" class="filters" style="margin-bottom:10px;"></div>
           <div id="recommendList" class="recommend-list"></div>
         </article>
@@ -785,7 +767,7 @@
 
       <section id="page-trash" class="page">
         <article class="card">
-          <h3 id="trashTitle" class="section-title">Çöp Kutusu</h3>
+          <h3 id="trashTitle" class="section-title">Ã‡Ã¶p Kutusu</h3>
           <div id="trashList" class="trash-list"></div>
         </article>
       </section>
@@ -798,11 +780,11 @@
   <div id="editModal" class="modal hidden" aria-hidden="true">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 id="editTitleLabel" class="section-title">Snippet Düzenle</h3>
+        <h3 id="editTitleLabel" class="section-title">Snippet DÃ¼zenle</h3>
         <button id="editClose" class="mini-btn" type="button">Kapat</button>
       </div>
       <div class="grid" style="gap:10px;">
-        <input id="editTitle" placeholder="Başlık" />
+        <input id="editTitle" placeholder="BaÅŸlÄ±k" />
         <select id="editLanguage">
           <option value="HTML">HTML</option>
           <option value="CSS">CSS</option>
@@ -810,23 +792,23 @@
           <option value="Python">Python</option>
           <option value="SQL">SQL</option>
         </select>
-        <input id="editTags" placeholder="Etiketler (virgülle)" />
+        <input id="editTags" placeholder="Etiketler (virgÃ¼lle)" />
         <input id="editCollection" placeholder="Koleksiyon" />
         <select id="editColor">
           <option value="#7c3aed">Renk: Mor</option>
           <option value="#0ea5e9">Renk: Mavi</option>
-          <option value="#22c55e">Renk: Yeşil</option>
+          <option value="#22c55e">Renk: YeÅŸil</option>
           <option value="#f97316">Renk: Turuncu</option>
           <option value="#f43f5e">Renk: Pembe</option>
         </select>
         <textarea id="editCode" placeholder="Kod"></textarea>
         <div class="file-actions">
           <button id="editSave" type="button">Kaydet</button>
-          <button id="editCancel" class="ghost" type="button">Vazgeç</button>
+          <button id="editCancel" class="ghost" type="button">VazgeÃ§</button>
         </div>
       </div>
       <div style="margin-top:12px;">
-        <b id="versionHistoryLabel">Sürüm Geçmişi</b>
+        <b id="versionHistoryLabel">SÃ¼rÃ¼m GeÃ§miÅŸi</b>
         <div id="versionList" class="version-list"></div>
       </div>
     </div>
@@ -844,101 +826,101 @@
     const I18N = {
       tr: {
         heroTitle: "Kod Snippet Dashboard",
-        heroDesc: "Bu cihazda kullanıcı girişi ile snippet’lerini sakla, ara ve yönet.",
-        themeLight: "Aydınlık Tema",
-        themeDark: "Karanlık Tema",
+        heroDesc: "Bu cihazda kullanÄ±cÄ± giriÅŸi ile snippetâ€™lerini sakla, ara ve yÃ¶net.",
+        themeLight: "AydÄ±nlÄ±k Tema",
+        themeDark: "KaranlÄ±k Tema",
         switchToEn: "English",
-        switchToTr: "Türkçe",
-        register: "Kayıt Ol",
-        login: "Giriş Yap",
-        username: "Kullanıcı adı",
-        password: "Şifre",
+        switchToTr: "TÃ¼rkÃ§e",
+        register: "KayÄ±t Ol",
+        login: "GiriÅŸ Yap",
+        username: "KullanÄ±cÄ± adÄ±",
+        password: "Åifre",
         dashboard: "Dashboard",
-        recommend: "Öneriler",
-        trash: "Çöp Kutusu",
-        logout: "Çıkış",
+        recommend: "Ã–neriler",
+        trash: "Ã‡Ã¶p Kutusu",
+        logout: "Ã‡Ä±kÄ±ÅŸ",
         addSnippet: "Snippet Ekle",
-        snippetTitlePlaceholder: "Snippet başlığı",
-        selectLanguage: "Dil seç",
-        tagsPlaceholder: "Etiketler (örn: api, ui, auth)",
-        collectionPlaceholder: "Koleksiyon adı (opsiyonel)",
+        snippetTitlePlaceholder: "Snippet baÅŸlÄ±ÄŸÄ±",
+        selectLanguage: "Dil seÃ§",
+        tagsPlaceholder: "Etiketler (Ã¶rn: api, ui, auth)",
+        collectionPlaceholder: "Koleksiyon adÄ± (opsiyonel)",
         codePlaceholder: "Kodunu buraya yaz...",
         filterSearch: "Filtre + Arama",
-        searchPlaceholder: "Örn: Flexbox kodu veya API fetch fonksiyonu",
+        searchPlaceholder: "Ã–rn: Flexbox kodu veya API fetch fonksiyonu",
         favorites: "Favoriler",
         collectionPrefix: "Koleksiyon",
-        collectionAll: "Koleksiyon: Tümü",
+        collectionAll: "Koleksiyon: TÃ¼mÃ¼",
         totalSnippets: "Toplam Snippet",
-        exportJson: "JSON Dışa Aktar",
-        importJson: "JSON İçe Aktar",
-        snippets: "Snippet’ler",
-        recommended: "Önerilen Parçacıklar",
+        exportJson: "JSON DÄ±ÅŸa Aktar",
+        importJson: "JSON Ä°Ã§e Aktar",
+        snippets: "Snippetâ€™ler",
+        recommended: "Ã–nerilen ParÃ§acÄ±klar",
         infoTitle: "Bilgilendirme",
-        infoQuickFlowLabel: "Hızlı Akış:",
-        infoQuickFlowDesc: "Snippet ekle → Etiketle → Favoriye al → Koleksiyona koy.",
+        infoQuickFlowLabel: "HÄ±zlÄ± AkÄ±ÅŸ:",
+        infoQuickFlowDesc: "Snippet ekle â†’ Etiketle â†’ Favoriye al â†’ Koleksiyona koy.",
         infoBackupFlowLabel: "Yedek:",
-        infoBackupFlowDesc: "JSON dışa aktar ile tek dosyada yedek al.",
+        infoBackupFlowDesc: "JSON dÄ±ÅŸa aktar ile tek dosyada yedek al.",
         infoSearchTitle: "Arama",
-        infoSearchDesc: "Başlık, etiket, koleksiyon ve koda göre arama yap.",
+        infoSearchDesc: "BaÅŸlÄ±k, etiket, koleksiyon ve koda gÃ¶re arama yap.",
         infoFavoritesTitle: "Favoriler",
-        infoFavoritesDesc: "★ ile işaretle, tek tıkla favori filtresi uygula.",
-        infoVersionTitle: "Sürüm Geçmişi",
-        infoVersionDesc: "Düzenleme yaptığında önceki kod sürümleri saklanır.",
-        infoTrashTitle: "Çöp Kutusu",
-        infoTrashDesc: "Silinen snippet’leri geri yükleyebilirsin.",
-        infoShortcutsTitle: "Kısayollar",
+        infoFavoritesDesc: "â˜… ile iÅŸaretle, tek tÄ±kla favori filtresi uygula.",
+        infoVersionTitle: "SÃ¼rÃ¼m GeÃ§miÅŸi",
+        infoVersionDesc: "DÃ¼zenleme yaptÄ±ÄŸÄ±nda Ã¶nceki kod sÃ¼rÃ¼mleri saklanÄ±r.",
+        infoTrashTitle: "Ã‡Ã¶p Kutusu",
+        infoTrashDesc: "Silinen snippetâ€™leri geri yÃ¼kleyebilirsin.",
+        infoShortcutsTitle: "KÄ±sayollar",
         infoShortcutsDesc: "Ctrl+K arama, Ctrl+Enter ekle, Ctrl+Shift+F favori filtresi.",
         infoBackupTitle: "Yedek",
-        infoBackupDesc: "JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.",
+        infoBackupDesc: "JSON dÄ±ÅŸa aktar/Ä°Ã§e aktar ile yedek al ve geri yÃ¼kle.",
         feedbackTitle: "Geri Bildirim",
         feedbackNamePlaceholder: "Ad Soyad",
         feedbackEmailPlaceholder: "E-posta",
-        feedbackMessagePlaceholder: "Mesajın...",
-        feedbackSubmit: "Gönder",
-        trashTitle: "Çöp Kutusu",
-        editSnippet: "Snippet Düzenle",
+        feedbackMessagePlaceholder: "MesajÄ±n...",
+        feedbackSubmit: "GÃ¶nder",
+        trashTitle: "Ã‡Ã¶p Kutusu",
+        editSnippet: "Snippet DÃ¼zenle",
         close: "Kapat",
         save: "Kaydet",
-        cancel: "Vazgeç",
-        versionHistory: "Sürüm Geçmişi",
-        all: "Tümü",
-        untitled: "Başlıksız",
-        noResult: "Sonuç bulunamadı.",
-        emptyTrash: "Çöp kutusu boş.",
-        noVersion: "Henüz sürüm geçmişi yok.",
+        cancel: "VazgeÃ§",
+        versionHistory: "SÃ¼rÃ¼m GeÃ§miÅŸi",
+        all: "TÃ¼mÃ¼",
+        untitled: "BaÅŸlÄ±ksÄ±z",
+        noResult: "SonuÃ§ bulunamadÄ±.",
+        emptyTrash: "Ã‡Ã¶p kutusu boÅŸ.",
+        noVersion: "HenÃ¼z sÃ¼rÃ¼m geÃ§miÅŸi yok.",
         favoriteTitle: "Favori",
-        edit: "Düzenle",
+        edit: "DÃ¼zenle",
         copy: "Kopyala",
         del: "Sil",
-        addFromReco: "Snippet’e Ekle",
-        moreScroll: "Daha fazlası için aşağı kaydır.",
+        addFromReco: "Snippetâ€™e Ekle",
+        moreScroll: "Daha fazlasÄ± iÃ§in aÅŸaÄŸÄ± kaydÄ±r.",
         deletedAt: "Silinme tarihi",
-        restore: "Geri Yükle",
-        purge: "Kalıcı Sil",
-        useVersion: "Bu sürümü kullan",
-        loggedInAs: "{user} olarak giriş yapıldı.",
-        registerRule: "Kullanıcı adı 3, şifre 4 karakterden uzun olmalı.",
-        userExists: "Bu kullanıcı zaten var.",
-        registerSuccess: "Kayıt başarılı. Giriş yapıldı.",
-        loginFail: "Kullanıcı adı veya şifre hatalı.",
-        loginSuccess: "Giriş başarılı.",
-        fillField: "Lütfen {fields} alanını doldur.",
-        fieldTitle: "başlık",
+        restore: "Geri YÃ¼kle",
+        purge: "KalÄ±cÄ± Sil",
+        useVersion: "Bu sÃ¼rÃ¼mÃ¼ kullan",
+        loggedInAs: "{user} olarak giriÅŸ yapÄ±ldÄ±.",
+        registerRule: "KullanÄ±cÄ± adÄ± 3, ÅŸifre 4 karakterden uzun olmalÄ±.",
+        userExists: "Bu kullanÄ±cÄ± zaten var.",
+        registerSuccess: "KayÄ±t baÅŸarÄ±lÄ±. GiriÅŸ yapÄ±ldÄ±.",
+        loginFail: "KullanÄ±cÄ± adÄ± veya ÅŸifre hatalÄ±.",
+        loginSuccess: "GiriÅŸ baÅŸarÄ±lÄ±.",
+        fillField: "LÃ¼tfen {fields} alanÄ±nÄ± doldur.",
+        fieldTitle: "baÅŸlÄ±k",
         fieldLanguage: "dil",
         fieldCode: "kod",
         toastAdded: "Snippet eklendi",
         toastFavOn: "Favorilere eklendi",
-        toastFavOff: "Favorilerden çıkarıldı",
-        toastCopied: "Panoya kopyalandı",
-        toastCopyFail: "Kopyalama başarısız",
-        toastMovedTrash: "Çöp kutusuna taşındı",
-        toastRestored: "Geri yüklendi",
-        toastPurged: "Kalıcı silindi",
-        toastUpdated: "Snippet güncellendi",
-        toastExported: "JSON dışa aktarıldı",
-        toastImported: "JSON içe aktarıldı",
-        toastImportFail: "JSON okunamadı",
-        toastVersionUsed: "Sürüm kodu alındı"
+        toastFavOff: "Favorilerden Ã§Ä±karÄ±ldÄ±",
+        toastCopied: "Panoya kopyalandÄ±",
+        toastCopyFail: "Kopyalama baÅŸarÄ±sÄ±z",
+        toastMovedTrash: "Ã‡Ã¶p kutusuna taÅŸÄ±ndÄ±",
+        toastRestored: "Geri yÃ¼klendi",
+        toastPurged: "KalÄ±cÄ± silindi",
+        toastUpdated: "Snippet gÃ¼ncellendi",
+        toastExported: "JSON dÄ±ÅŸa aktarÄ±ldÄ±",
+        toastImported: "JSON iÃ§e aktarÄ±ldÄ±",
+        toastImportFail: "JSON okunamadÄ±",
+        toastVersionUsed: "SÃ¼rÃ¼m kodu alÄ±ndÄ±"
       },
       en: {
         heroTitle: "Code Snippet Dashboard",
@@ -946,7 +928,7 @@
         themeLight: "Light Theme",
         themeDark: "Dark Theme",
         switchToEn: "English",
-        switchToTr: "Türkçe",
+        switchToTr: "TÃ¼rkÃ§e",
         register: "Sign Up",
         login: "Sign In",
         username: "Username",
@@ -979,7 +961,7 @@
         infoSearchTitle: "Search",
         infoSearchDesc: "Search by title, tags, collection, and code.",
         infoFavoritesTitle: "Favorites",
-        infoFavoritesDesc: "Mark with ★ and apply the favorites filter in one click.",
+        infoFavoritesDesc: "Mark with â˜… and apply the favorites filter in one click.",
         infoVersionTitle: "Version History",
         infoVersionDesc: "Previous code versions are saved when you edit.",
         infoTrashTitle: "Trash",
@@ -1080,27 +1062,27 @@
 
 
     const RECOMMENDED = [
-      { title: "Flex Center", language: "CSS", description: "Tek satırda merkezleme.", code: ".container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}" },
-      { title: "Grid Auto", language: "CSS", description: "Responsive grid yapısı.", code: ".grid {\n  display: grid;\n  gap: 16px;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n}" },
-      { title: "Clamp Font", language: "CSS", description: "Akıllı font boyutu.", code: "h1 {\n  font-size: clamp(1.6rem, 4vw, 2.4rem);\n}" },
-      { title: "Sticky Header", language: "CSS", description: "Sabit başlık.", code: ".header {\n  position: sticky;\n  top: 0;\n  z-index: 10;\n}" },
-      { title: "Fetch JSON", language: "JavaScript", description: "API çağrısı ve JSON dönüşü.", code: "async function getData(url) {\n  const res = await fetch(url);\n  return res.json();\n}" },
+      { title: "Flex Center", language: "CSS", description: "Tek satÄ±rda merkezleme.", code: ".container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}" },
+      { title: "Grid Auto", language: "CSS", description: "Responsive grid yapÄ±sÄ±.", code: ".grid {\n  display: grid;\n  gap: 16px;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n}" },
+      { title: "Clamp Font", language: "CSS", description: "AkÄ±llÄ± font boyutu.", code: "h1 {\n  font-size: clamp(1.6rem, 4vw, 2.4rem);\n}" },
+      { title: "Sticky Header", language: "CSS", description: "Sabit baÅŸlÄ±k.", code: ".header {\n  position: sticky;\n  top: 0;\n  z-index: 10;\n}" },
+      { title: "Fetch JSON", language: "JavaScript", description: "API Ã§aÄŸrÄ±sÄ± ve JSON dÃ¶nÃ¼ÅŸÃ¼.", code: "async function getData(url) {\n  const res = await fetch(url);\n  return res.json();\n}" },
       { title: "Debounce", language: "JavaScript", description: "Gecikmeli tetikleme.", code: "function debounce(fn, delay=300){\n  let t;\n  return (...args)=>{\n    clearTimeout(t);\n    t=setTimeout(()=>fn(...args), delay);\n  };\n}" },
-      { title: "LocalStorage", language: "JavaScript", description: "Basit localStorage yardımcıları.", code: "const store = {\n  get(key, fallback){\n    try {\n      const raw = localStorage.getItem(key);\n      return raw ? JSON.parse(raw) : fallback;\n    } catch { return fallback; }\n  },\n  set(key, value){\n    localStorage.setItem(key, JSON.stringify(value));\n  }\n};" },
-      { title: "Query Params", language: "JavaScript", description: "URL parametre çözme.", code: "const params = new URLSearchParams(location.search);\nconst page = params.get('page');" },
-      { title: "Basit Flask", language: "Python", description: "Minimal API örneği.", code: "from flask import Flask\napp = Flask(__name__)\n\n@app.get('/')\ndef home():\n    return {\"status\": \"ok\"}\n" },
-      { title: "Liste Comprehension", language: "Python", description: "Kısa liste üretimi.", code: "nums = [n*n for n in range(10) if n % 2 == 0]" },
-      { title: "Requests Get", language: "Python", description: "Basit GET isteği.", code: "import requests\nres = requests.get('https://example.com')\nprint(res.status_code)" },
+      { title: "LocalStorage", language: "JavaScript", description: "Basit localStorage yardÄ±mcÄ±larÄ±.", code: "const store = {\n  get(key, fallback){\n    try {\n      const raw = localStorage.getItem(key);\n      return raw ? JSON.parse(raw) : fallback;\n    } catch { return fallback; }\n  },\n  set(key, value){\n    localStorage.setItem(key, JSON.stringify(value));\n  }\n};" },
+      { title: "Query Params", language: "JavaScript", description: "URL parametre Ã§Ã¶zme.", code: "const params = new URLSearchParams(location.search);\nconst page = params.get('page');" },
+      { title: "Basit Flask", language: "Python", description: "Minimal API Ã¶rneÄŸi.", code: "from flask import Flask\napp = Flask(__name__)\n\n@app.get('/')\ndef home():\n    return {\"status\": \"ok\"}\n" },
+      { title: "Liste Comprehension", language: "Python", description: "KÄ±sa liste Ã¼retimi.", code: "nums = [n*n for n in range(10) if n % 2 == 0]" },
+      { title: "Requests Get", language: "Python", description: "Basit GET isteÄŸi.", code: "import requests\nres = requests.get('https://example.com')\nprint(res.status_code)" },
       { title: "Pandas Read", language: "Python", description: "CSV okuma.", code: "import pandas as pd\ndf = pd.read_csv('data.csv')" },
-      { title: "HTML Kart", language: "HTML", description: "Basit kart yapısı.", code: "<article class=\"card\">\n  <h2>Başlık</h2>\n  <p>Açıklama</p>\n</article>" },
-      { title: "Form Alanı", language: "HTML", description: "Basit form alanı.", code: "<label>Ad</label>\n<input type=\"text\" />" },
-      { title: "Tablo", language: "HTML", description: "Temel tablo.", code: "<table>\n  <tr><th>Ad</th><th>Yaş</th></tr>\n  <tr><td>Ayşe</td><td>24</td></tr>\n</table>" },
+      { title: "HTML Kart", language: "HTML", description: "Basit kart yapÄ±sÄ±.", code: "<article class=\"card\">\n  <h2>BaÅŸlÄ±k</h2>\n  <p>AÃ§Ä±klama</p>\n</article>" },
+      { title: "Form AlanÄ±", language: "HTML", description: "Basit form alanÄ±.", code: "<label>Ad</label>\n<input type=\"text\" />" },
+      { title: "Tablo", language: "HTML", description: "Temel tablo.", code: "<table>\n  <tr><th>Ad</th><th>YaÅŸ</th></tr>\n  <tr><td>AyÅŸe</td><td>24</td></tr>\n</table>" },
       { title: "SQL Select", language: "SQL", description: "Basit sorgu.", code: "SELECT * FROM users WHERE is_active = 1;" },
       { title: "SQL Join", language: "SQL", description: "Temel join.", code: "SELECT o.id, u.name FROM orders o\nJOIN users u ON u.id = o.user_id;" },
       { title: "SQL Aggregate", language: "SQL", description: "Gruplama.", code: "SELECT status, COUNT(*) FROM tickets GROUP BY status;" },
       { title: "CSS Button", language: "CSS", description: "Buton animasyonu.", code: ".btn {\n  transition: transform .2s ease;\n}\n.btn:hover {\n  transform: translateY(-2px);\n}" },
-      { title: "JS Array Map", language: "JavaScript", description: "Map örneği.", code: "const names = users.map(u => u.name);" },
-      { title: "Python Dict", language: "Python", description: "Sözlük kullanımı.", code: "user = {\n  'name': 'Ada',\n  'role': 'admin'\n}" },
+      { title: "JS Array Map", language: "JavaScript", description: "Map Ã¶rneÄŸi.", code: "const names = users.map(u => u.name);" },
+      { title: "Python Dict", language: "Python", description: "SÃ¶zlÃ¼k kullanÄ±mÄ±.", code: "user = {\n  'name': 'Ada',\n  'role': 'admin'\n}" },
       { title: "HTML Nav", language: "HTML", description: "Basit navigasyon.", code: "<nav>\n  <a href=\"/\">Home</a>\n  <a href=\"/docs\">Docs</a>\n</nav>" },
       { title: "CSS Card", language: "CSS", description: "Kart stili.", code: ".card {\n  border-radius: 16px;\n  box-shadow: 0 10px 30px rgba(0,0,0,.1);\n}" }
     ];
@@ -1143,9 +1125,6 @@
       favoriteToggle: document.getElementById("favoriteToggle"),
       snippetList: document.getElementById("snippetList"),
       statTotal: document.getElementById("statTotal"),
-      statFavorites: document.getElementById("statFavorites"),
-      statTrash: document.getElementById("statTrash"),
-      undoDeleteBtn: document.getElementById("undoDeleteBtn"),
       exportBtn: document.getElementById("exportBtn"),
       importBtn: document.getElementById("importBtn"),
       importInput: document.getElementById("importInput"),
@@ -1212,7 +1191,6 @@
       recoLimit: 8,
       page: "dashboard",
       editId: null,
-      lastDeleted: null,
       draft: null
     };
 
@@ -1571,9 +1549,7 @@
       const snippets = getSnippets();
       const list = filterSnippets(snippets);
       els.statTotal.textContent = snippets.length;
-      els.statFavorites.textContent = snippets.filter(s => s.favorite).length;
-      els.statTrash.textContent = getTrash().length;
-
+            
       if (!list.length) {
         els.snippetList.innerHTML = `<div class="muted">${t("noResult")}</div>`;
         return;
@@ -1584,9 +1560,9 @@
           <div class="snippet-head">
             <h4 class="snippet-title">${escapeHtml(snippet.title)} <span class="badge">${escapeHtml(snippet.language)}</span></h4>
             <div class="mini-actions">
-              <button class="mini-btn fav-btn ${snippet.favorite ? "active" : ""}" data-fav="${snippet.id}" title="${t("favoriteTitle")}">★</button>
+              <button class="mini-btn fav-btn ${snippet.favorite ? "active" : ""}" data-fav="${snippet.id}" title="${t("favoriteTitle")}">â˜…</button>
               <button class="mini-btn" data-edit="${snippet.id}">${t("edit")}</button>
-              <button class="mini-btn" data-share="${snippet.id}">Paylaş</button>
+              <button class="mini-btn" data-share="${snippet.id}">PaylaÅŸ</button>
               <button class="mini-btn" data-copy="${snippet.id}">${t("copy")}</button>
               <button class="mini-btn" data-delete="${snippet.id}">${t("del")}</button>
             </div>
@@ -1839,8 +1815,8 @@
           code: snippet.code
         };
         navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
-          .then(() => showToast("JSON kopyalandı"))
-          .catch(() => showToast("Kopyalama başarısız"));
+          .then(() => showToast("JSON kopyalandÄ±"))
+          .catch(() => showToast("Kopyalama baÅŸarÄ±sÄ±z"));
         return;
       }
 
@@ -1875,7 +1851,6 @@
       const trash = getTrash();
       const removed = { ...target, deletedAt: new Date().toISOString() };
       trash.unshift(removed);
-      state.lastDeleted = removed;
       saveSnippets(updated);
       saveTrash(trash);
       renderAll();
@@ -2034,63 +2009,66 @@
         showPage(btn.dataset.page);
         if (btn.dataset.page === "recommend") {
           state.recoLimit = 8;
-          renderTavşiyeler();
+          renderTavÅŸiyeler();
         }
       });
     });
 
     els.geri AlBtn = belge.getElementById("Btn'yi Sil'i geri al");
-    els.geri AlBtn.etkinlik Dinleyicisi ekle("tıkla", () => {
-      eğer (!devlet.oğulsilindi) dönüş;
-      i̇nşaat parçacıklar = getsnippet'ler();
-      i̇nşaat çöp = çöpü Al().süzüntü(t => t.kimlik !== devlet.oğulsilindi.kimlik);
-      i̇nşaat geri yüksekmek edilmiş = { ...devlet.oğulsilindi };
-      sil geri yüksekmek edilmiş.silindiAt;
-      parçacıklar.vites değiştirme(geri yüksekmek edilmiş);
-      devlet.oğulsilindi = boş;
-      çöpü Kaydet(çöp);
-      parçacığı'leri kaydet(parçacıklar);
-      renderTüm();
-      tost göster(t("kızarmış ekmek Restore edildi"));
+    els.geri AlBtn.etkinlik Dinleyicisi ekle("tÄ±kla", () => {
+      eÄŸer (!devlet.oÄŸulsilindi) dÃ¶nÃ¼ÅŸ;
+      iÌ‡nÅŸaat parÃ§acÄ±klar = getsnippet'ler();
+      iÌ‡nÅŸaat Ã§Ã¶p = Ã§Ã¶pÃ¼ Al().sÃ¼zÃ¼ntÃ¼(t => t.kimlik !== devlet.oÄŸulsilindi.kimlik);
+      iÌ‡nÅŸaat geri yÃ¼ksekmek edilmiÅŸ = { ...devlet.oÄŸulsilindi };
+      sil geri yÃ¼ksekmek edilmiÅŸ.silindiAt;
+      parÃ§acÄ±klar.vites deÄŸiÅŸtirme(geri yÃ¼ksekmek edilmiÅŸ);
+      devlet.oÄŸulsilindi = boÅŸ;
+      Ã§Ã¶pÃ¼ Kaydet(Ã§Ã¶p);
+      parÃ§acÄ±ÄŸÄ±'leri kaydet(parÃ§acÄ±klar);
+      renderTÃ¼m();
+      tost gÃ¶ster(t("kÄ±zarmÄ±ÅŸ ekmek Restore edildi"));
     });
 
-    pencere.etkinlik Dinleyicisi ekle("kaydır", belkiDaha Fazla Yüksel);
+    pencere.etkinlik Dinleyicisi ekle("kaydÄ±r", belkiDaha Fazla YÃ¼ksel);
 
     belge.etkinlik Dinleyicisi ekle("anahtar kapatma", (etkinlik) => {
-      eğer (etkinlik.anahtar === "Kaçış") {
-        kapatDüzenleModal();
-        dönüş;
+      eÄŸer (etkinlik.anahtar === "KaÃ§Ä±ÅŸ") {
+        kapatDÃ¼zenleModal();
+        dÃ¶nÃ¼ÅŸ;
       }
-      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar.Alt Kasaya() === "K") {
-        etkinlik.önlevarsayılan();
-        els.arama Girişi.odunlan();
+      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar.Alt Kasaya() === "K") {
+        etkinlik.Ã¶nlevarsayÄ±lan();
+        els.arama GiriÅŸi.odunlan();
       }
-      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar === "Girmek") {
-        eğer (devlet.sayfa === "gösterge tablosu") {
-          els.ekleSnippetBtn.tık tık();
+      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar === "Girmek") {
+        eÄŸer (devlet.sayfa === "gÃ¶sterge tablosu") {
+          els.ekleSnippetBtn.tÄ±k tÄ±k();
         }
       }
-      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar kaydır && etkinlik.anahtar.Alt Kasaya() === "f") {
-        etkinlik.önlevarsayılan();
-        devlet.favoriYalnızca = !devlet.favoriYalnızca;
+      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar kaydÄ±r && etkinlik.anahtar.Alt Kasaya() === "f") {
+        etkinlik.Ã¶nlevarsayÄ±lan();
+        devlet.favoriYalnÄ±zca = !devlet.favoriYalnÄ±zca;
         renderSnippet'ler();
         renderCollectionFiltre(getsnippet'ler());
       }
     });
 
     dil Uygula();
-    eğer (devlet.mağaza.oturum && devlet.mağaza.oturum.kullanıcı) {
-      girişler(devlet.mağaza.oturum.kullanıcı);
-    } başka {
-      gösteriş();
+    eÄŸer (devlet.maÄŸaza.oturum && devlet.maÄŸaza.oturum.kullanÄ±cÄ±) {
+      giriÅŸler(devlet.maÄŸaza.oturum.kullanÄ±cÄ±);
+    } baÅŸka {
+      gÃ¶steriÅŸ();
     }
 
-    eğer ("hizmet Çalışanı" içinde navigatör) {
-      navigatör.servisişçi.kayıt ol("/sw.js").yakalamak(() => {});
+    eÄŸer ("hizmet Ã‡alÄ±ÅŸanÄ±" iÃ§inde navigatÃ¶r) {
+      navigatÃ¶r.servisiÅŸÃ§i.kayÄ±t ol("/sw.js").yakalamak(() => {});
     }
   </senaryo>
-</vücut>
+</vÃ¼cut>
 </html>
+
+
+
 
 
 
