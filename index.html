@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
@@ -171,6 +171,23 @@
       border: 1px solid var(--border);
       font-size: 0.85rem;
     }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .stat-card {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .stat-card b { font-size: 1.3rem; }
 
     .muted { color: var(--muted); font-size: 0.9rem; }
     .hidden { display: none !important; }
@@ -688,7 +705,22 @@
           </aside>
 
           <main class="card">
-            <h3 id="snippetsTitle" class="section-title">Snippetler</h3>
+            <h3 id="snippetsTitle" class="section-title">Snippet’ler</h3>
+            <div class="stat-grid" style="margin-bottom:10px;">
+              <div class="stat-card">
+                <span>Toplam</span>
+                <b id="statTotal">0</b>
+              </div>
+              <div class="stat-card">
+                <span>Favoriler</span>
+                <b id="statFavorites">0</b>
+              </div>
+              <div class="stat-card">
+                <span>Çöp</span>
+                <b id="statTrash">0</b>
+              </div>
+            </div>
+            <button id="undoDeleteBtn" class="ghost" type="button" style="margin-bottom:10px;">Son silineni geri al</button>
             <div id="snippetList" class="snippet-list"></div>
           </main>
         </div>
@@ -1111,6 +1143,9 @@
       favoriteToggle: document.getElementById("favoriteToggle"),
       snippetList: document.getElementById("snippetList"),
       statTotal: document.getElementById("statTotal"),
+      statFavorites: document.getElementById("statFavorites"),
+      statTrash: document.getElementById("statTrash"),
+      undoDeleteBtn: document.getElementById("undoDeleteBtn"),
       exportBtn: document.getElementById("exportBtn"),
       importBtn: document.getElementById("importBtn"),
       importInput: document.getElementById("importInput"),
@@ -1177,6 +1212,7 @@
       recoLimit: 8,
       page: "dashboard",
       editId: null,
+      lastDeleted: null,
       draft: null
     };
 
@@ -1535,7 +1571,9 @@
       const snippets = getSnippets();
       const list = filterSnippets(snippets);
       els.statTotal.textContent = snippets.length;
-            
+      els.statFavorites.textContent = snippets.filter(s => s.favorite).length;
+      els.statTrash.textContent = getTrash().length;
+
       if (!list.length) {
         els.snippetList.innerHTML = `<div class="muted">${t("noResult")}</div>`;
         return;
@@ -1837,7 +1875,8 @@
       const trash = getTrash();
       const removed = { ...target, deletedAt: new Date().toISOString() };
       trash.unshift(removed);
-            saveSnippets(updated);
+      state.lastDeleted = removed;
+      saveSnippets(updated);
       saveTrash(trash);
       renderAll();
       showToast(t("toastMovedTrash"));
@@ -1995,54 +2034,63 @@
         showPage(btn.dataset.page);
         if (btn.dataset.page === "recommend") {
           state.recoLimit = 8;
-          renderRecommendations();
+          renderTavşiyeler();
         }
       });
     });
 
-    
+    els.geri AlBtn = belge.getElementById("Btn'yi Sil'i geri al");
+    els.geri AlBtn.etkinlik Dinleyicisi ekle("tıkla", () => {
+      eğer (!devlet.oğulsilindi) dönüş;
+      i̇nşaat parçacıklar = getsnippet'ler();
+      i̇nşaat çöp = çöpü Al().süzüntü(t => t.kimlik !== devlet.oğulsilindi.kimlik);
+      i̇nşaat geri yüksekmek edilmiş = { ...devlet.oğulsilindi };
+      sil geri yüksekmek edilmiş.silindiAt;
+      parçacıklar.vites değiştirme(geri yüksekmek edilmiş);
+      devlet.oğulsilindi = boş;
+      çöpü Kaydet(çöp);
+      parçacığı'leri kaydet(parçacıklar);
+      renderTüm();
+      tost göster(t("kızarmış ekmek Restore edildi"));
+    });
 
-    window.addEventListener("scroll", maybeLoadMore);
+    pencere.etkinlik Dinleyicisi ekle("kaydır", belkiDaha Fazla Yüksel);
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeEditModal();
-        return;
+    belge.etkinlik Dinleyicisi ekle("anahtar kapatma", (etkinlik) => {
+      eğer (etkinlik.anahtar === "Kaçış") {
+        kapatDüzenleModal();
+        dönüş;
       }
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
-        event.preventDefault();
-        els.searchInput.focus();
+      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar.Alt Kasaya() === "K") {
+        etkinlik.önlevarsayılan();
+        els.arama Girişi.odunlan();
       }
-      if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-        if (state.page === "dashboard") {
-          els.addSnippetBtn.click();
+      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar === "Girmek") {
+        eğer (devlet.sayfa === "gösterge tablosu") {
+          els.ekleSnippetBtn.tık tık();
         }
       }
-      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === "f") {
-        event.preventDefault();
-        state.favoriteOnly = !state.favoriteOnly;
-        renderSnippets();
-        renderCollectionFilter(getSnippets());
+      eğer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar kaydır && etkinlik.anahtar.Alt Kasaya() === "f") {
+        etkinlik.önlevarsayılan();
+        devlet.favoriYalnızca = !devlet.favoriYalnızca;
+        renderSnippet'ler();
+        renderCollectionFiltre(getsnippet'ler());
       }
     });
 
-    applyLanguage();
-    if (state.store.session && state.store.session.user) {
-      loginAs(state.store.session.user);
-    } else {
-      showAuth();
+    dil Uygula();
+    eğer (devlet.mağaza.oturum && devlet.mağaza.oturum.kullanıcı) {
+      girişler(devlet.mağaza.oturum.kullanıcı);
+    } başka {
+      gösteriş();
     }
 
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    eğer ("hizmet Çalışanı" içinde navigatör) {
+      navigatör.servisişçi.kayıt ol("/sw.js").yakalamak(() => {});
     }
-  </script>
-</body>
+  </senaryo>
+</vücut>
 </html>
-
-
-
-
 
 
 
