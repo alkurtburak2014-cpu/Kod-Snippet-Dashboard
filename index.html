@@ -8,9 +8,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap");
 
@@ -170,19 +167,6 @@
       background: var(--panel-2);
       border: 1px solid var(--border);
       font-size: 0.85rem;
-    }
-
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-    }
-
-      background: var(--panel-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px 12px;
-      display: grid;
-      gap: 4px;
     }
 
 
@@ -608,7 +592,7 @@
       <div class="hero-top">
         <div>
           <h1 id="heroTitle">Kod Snippet Dashboard</h1>
-          <p id="heroDesc">Bu cihazda kullanÄ±cÄ± giriÅŸi ile snippetâ€™lerini sakla, ara ve yÃ¶net.</p>
+          <p id="heroDesc">Bu cihazda kullanıcı girişi ile snippet'lerini sakla, ara ve yönet.</p>
         </div>
         <div class="hero-actions">
           <button id="themeToggle" class="theme-toggle" type="button">AydÄ±nlÄ±k Tema</button>
@@ -826,101 +810,104 @@
     const I18N = {
       tr: {
         heroTitle: "Kod Snippet Dashboard",
-        heroDesc: "Bu cihazda kullanÄ±cÄ± giriÅŸi ile snippetâ€™lerini sakla, ara ve yÃ¶net.",
-        themeLight: "AydÄ±nlÄ±k Tema",
-        themeDark: "KaranlÄ±k Tema",
+        heroDesc: "Bu cihazda kullanıcı girişi ile snippet'lerini sakla, ara ve yönet.",
+        themeLight: "Aydınlık Tema",
+        themeDark: "Karanlık Tema",
         switchToEn: "English",
-        switchToTr: "TÃ¼rkÃ§e",
-        register: "KayÄ±t Ol",
-        login: "GiriÅŸ Yap",
-        username: "KullanÄ±cÄ± adÄ±",
-        password: "Åifre",
+        switchToTr: "Türkçe",
+        register: "Kayıt Ol",
+        login: "Giriş Yap",
+        username: "Kullanıcı adı",
+        password: "Şifre",
         dashboard: "Dashboard",
-        recommend: "Ã–neriler",
-        trash: "Ã‡Ã¶p Kutusu",
-        logout: "Ã‡Ä±kÄ±ÅŸ",
+        recommend: "Öneriler",
+        trash: "Çöp Kutusu",
+        logout: "Çıkış",
         addSnippet: "Snippet Ekle",
-        snippetTitlePlaceholder: "Snippet baÅŸlÄ±ÄŸÄ±",
-        selectLanguage: "Dil seÃ§",
-        tagsPlaceholder: "Etiketler (Ã¶rn: api, ui, auth)",
-        collectionPlaceholder: "Koleksiyon adÄ± (opsiyonel)",
+        snippetTitlePlaceholder: "Snippet başlığı",
+        selectLanguage: "Dil seç",
+        tagsPlaceholder: "Etiketler (örn: api, ui, auth)",
+        collectionPlaceholder: "Koleksiyon adı (opsiyonel)",
         codePlaceholder: "Kodunu buraya yaz...",
         filterSearch: "Filtre + Arama",
-        searchPlaceholder: "Ã–rn: Flexbox kodu veya API fetch fonksiyonu",
+        searchPlaceholder: "Örn: Flexbox kodu veya API fetch fonksiyonu",
         favorites: "Favoriler",
         collectionPrefix: "Koleksiyon",
-        collectionAll: "Koleksiyon: TÃ¼mÃ¼",
+        collectionAll: "Koleksiyon: Tümü",
         totalSnippets: "Toplam Snippet",
-        exportJson: "JSON DÄ±ÅŸa Aktar",
-        importJson: "JSON Ä°Ã§e Aktar",
-        snippets: "Snippetâ€™ler",
-        recommended: "Ã–nerilen ParÃ§acÄ±klar",
+        exportJson: "JSON Dışa Aktar",
+        importJson: "JSON İçe Aktar",
+        snippets: "Snippet'ler",
+        recommended: "Önerilen Parçacıklar",
         infoTitle: "Bilgilendirme",
-        infoQuickFlowLabel: "HÄ±zlÄ± AkÄ±ÅŸ:",
-        infoQuickFlowDesc: "Snippet ekle â†’ Etiketle â†’ Favoriye al â†’ Koleksiyona koy.",
+        infoQuickFlowLabel: "Hızlı Akış:",
+        infoQuickFlowDesc: "Snippet ekle → Etiketle → Favoriye al → Koleksiyona koy.",
         infoBackupFlowLabel: "Yedek:",
-        infoBackupFlowDesc: "JSON dÄ±ÅŸa aktar ile tek dosyada yedek al.",
+        infoBackupFlowDesc: "JSON dışa aktar ile tek dosyada yedek al.",
         infoSearchTitle: "Arama",
-        infoSearchDesc: "BaÅŸlÄ±k, etiket, koleksiyon ve koda gÃ¶re arama yap.",
+        infoSearchDesc: "Başlık, etiket, koleksiyon ve koda göre arama yap.",
         infoFavoritesTitle: "Favoriler",
-        infoFavoritesDesc: "â˜… ile iÅŸaretle, tek tÄ±kla favori filtresi uygula.",
-        infoVersionTitle: "SÃ¼rÃ¼m GeÃ§miÅŸi",
-        infoVersionDesc: "DÃ¼zenleme yaptÄ±ÄŸÄ±nda Ã¶nceki kod sÃ¼rÃ¼mleri saklanÄ±r.",
-        infoTrashTitle: "Ã‡Ã¶p Kutusu",
-        infoTrashDesc: "Silinen snippetâ€™leri geri yÃ¼kleyebilirsin.",
-        infoShortcutsTitle: "KÄ±sayollar",
+        infoFavoritesDesc: "★ ile işaretle, tek tıkla favori filtresi uygula.",
+        infoVersionTitle: "Sürüm Geçmişi",
+        infoVersionDesc: "Düzenleme yapıldığında önceki kod sürümleri saklanır.",
+        infoTrashTitle: "Çöp Kutusu",
+        infoTrashDesc: "Silinen snippet'leri geri yükleyebilirsin.",
+        infoShortcutsTitle: "Kısayollar",
         infoShortcutsDesc: "Ctrl+K arama, Ctrl+Enter ekle, Ctrl+Shift+F favori filtresi.",
         infoBackupTitle: "Yedek",
-        infoBackupDesc: "JSON dÄ±ÅŸa aktar/Ä°Ã§e aktar ile yedek al ve geri yÃ¼kle.",
+        infoBackupDesc: "JSON dışa aktar/İçe aktar ile yedek al ve geri yükle.",
         feedbackTitle: "Geri Bildirim",
         feedbackNamePlaceholder: "Ad Soyad",
         feedbackEmailPlaceholder: "E-posta",
-        feedbackMessagePlaceholder: "MesajÄ±n...",
-        feedbackSubmit: "GÃ¶nder",
-        trashTitle: "Ã‡Ã¶p Kutusu",
-        editSnippet: "Snippet DÃ¼zenle",
+        feedbackMessagePlaceholder: "Mesajın...",
+        feedbackSubmit: "Gönder",
+        trashTitle: "Çöp Kutusu",
+        editSnippet: "Snippet Düzenle",
         close: "Kapat",
         save: "Kaydet",
-        cancel: "VazgeÃ§",
-        versionHistory: "SÃ¼rÃ¼m GeÃ§miÅŸi",
-        all: "TÃ¼mÃ¼",
-        untitled: "BaÅŸlÄ±ksÄ±z",
-        noResult: "SonuÃ§ bulunamadÄ±.",
-        emptyTrash: "Ã‡Ã¶p kutusu boÅŸ.",
-        noVersion: "HenÃ¼z sÃ¼rÃ¼m geÃ§miÅŸi yok.",
+        cancel: "Vazgeç",
+        versionHistory: "Sürüm Geçmişi",
+        all: "Tümü",
+        untitled: "Başlıksız",
+        noResult: "Sonuç bulunamadı.",
+        emptyTrash: "Çöp kutusu boş.",
+        noVersion: "Henüz sürüm geçmişi yok.",
         favoriteTitle: "Favori",
-        edit: "DÃ¼zenle",
+        edit: "Düzenle",
         copy: "Kopyala",
+        share: "Paylaş",
         del: "Sil",
-        addFromReco: "Snippetâ€™e Ekle",
-        moreScroll: "Daha fazlasÄ± iÃ§in aÅŸaÄŸÄ± kaydÄ±r.",
+        addFromReco: "Snippet'e Ekle",
+        moreScroll: "Daha fazlası için aşağı kaydır.",
         deletedAt: "Silinme tarihi",
-        restore: "Geri YÃ¼kle",
-        purge: "KalÄ±cÄ± Sil",
-        useVersion: "Bu sÃ¼rÃ¼mÃ¼ kullan",
-        loggedInAs: "{user} olarak giriÅŸ yapÄ±ldÄ±.",
-        registerRule: "KullanÄ±cÄ± adÄ± 3, ÅŸifre 4 karakterden uzun olmalÄ±.",
-        userExists: "Bu kullanÄ±cÄ± zaten var.",
-        registerSuccess: "KayÄ±t baÅŸarÄ±lÄ±. GiriÅŸ yapÄ±ldÄ±.",
-        loginFail: "KullanÄ±cÄ± adÄ± veya ÅŸifre hatalÄ±.",
-        loginSuccess: "GiriÅŸ baÅŸarÄ±lÄ±.",
-        fillField: "LÃ¼tfen {fields} alanÄ±nÄ± doldur.",
-        fieldTitle: "baÅŸlÄ±k",
+        restore: "Geri Yükle",
+        purge: "Kalıcı Sil",
+        useVersion: "Bu sürümü kullan",
+        loggedInAs: "{user} olarak giriş yapıldı.",
+        registerRule: "Kullanıcı adı 3, şifre 4 karakterden uzun olmalı.",
+        userExists: "Bu kullanıcı zaten var.",
+        registerSuccess: "Kayıt başarılı. Giriş yapıldı.",
+        loginFail: "Kullanıcı adı veya şifre hatalı.",
+        loginSuccess: "Giriş başarılı.",
+        fillField: "Lütfen {fields} alanını doldur.",
+        fieldTitle: "başlık",
         fieldLanguage: "dil",
         fieldCode: "kod",
         toastAdded: "Snippet eklendi",
         toastFavOn: "Favorilere eklendi",
-        toastFavOff: "Favorilerden Ã§Ä±karÄ±ldÄ±",
-        toastCopied: "Panoya kopyalandÄ±",
-        toastCopyFail: "Kopyalama baÅŸarÄ±sÄ±z",
-        toastMovedTrash: "Ã‡Ã¶p kutusuna taÅŸÄ±ndÄ±",
-        toastRestored: "Geri yÃ¼klendi",
-        toastPurged: "KalÄ±cÄ± silindi",
-        toastUpdated: "Snippet gÃ¼ncellendi",
-        toastExported: "JSON dÄ±ÅŸa aktarÄ±ldÄ±",
-        toastImported: "JSON iÃ§e aktarÄ±ldÄ±",
-        toastImportFail: "JSON okunamadÄ±",
-        toastVersionUsed: "SÃ¼rÃ¼m kodu alÄ±ndÄ±"
+        toastFavOff: "Favorilerden çıkarıldı",
+        toastCopied: "Panoya kopyalandı",
+        toastCopyFail: "Kopyalama başarısız",
+        toastShareSuccess: "JSON kopyalandı",
+        toastShareFail: "Kopyalama başarısız",
+        toastMovedTrash: "Çöp kutusuna taşındı",
+        toastRestored: "Geri yüklendi",
+        toastPurged: "Kalıcı silindi",
+        toastUpdated: "Snippet güncellendi",
+        toastExported: "JSON dışa aktarıldı",
+        toastImported: "JSON içe aktarıldı",
+        toastImportFail: "JSON okunamadı",
+        toastVersionUsed: "Sürüm kodu alındı"
       },
       en: {
         heroTitle: "Code Snippet Dashboard",
@@ -1017,6 +1004,9 @@
         toastUpdated: "Snippet updated",
         toastExported: "JSON exported",
         toastImported: "JSON imported",
+        share: "Share",
+        toastShareSuccess: "JSON copied",
+        toastShareFail: "Copy failed",
         toastImportFail: "Could not read JSON",
         toastVersionUsed: "Version code inserted"
       }
@@ -1191,7 +1181,8 @@
       recoLimit: 8,
       page: "dashboard",
       editId: null,
-      draft: null
+      draft: null,
+      lastDeleted: null
     };
 
     function localeCode() {
@@ -1560,9 +1551,9 @@
           <div class="snippet-head">
             <h4 class="snippet-title">${escapeHtml(snippet.title)} <span class="badge">${escapeHtml(snippet.language)}</span></h4>
             <div class="mini-actions">
-              <button class="mini-btn fav-btn ${snippet.favorite ? "active" : ""}" data-fav="${snippet.id}" title="${t("favoriteTitle")}">â˜…</button>
+              <button class="mini-btn fav-btn ${snippet.favorite ? "active" : ""}" data-fav="${snippet.id}" title="${t("favoriteTitle")}">★</button>
               <button class="mini-btn" data-edit="${snippet.id}">${t("edit")}</button>
-              <button class="mini-btn" data-share="${snippet.id}">PaylaÅŸ</button>
+              <button class="mini-btn" data-share="${snippet.id}">${t("share")}</button>
               <button class="mini-btn" data-copy="${snippet.id}">${t("copy")}</button>
               <button class="mini-btn" data-delete="${snippet.id}">${t("del")}</button>
             </div>
@@ -1815,8 +1806,8 @@
           code: snippet.code
         };
         navigator.clipboard.writeText(JSON.stringify(payload, null, 2))
-          .then(() => showToast("JSON kopyalandÄ±"))
-          .catch(() => showToast("Kopyalama baÅŸarÄ±sÄ±z"));
+          .then(() => showToast(t("toastShareSuccess")))
+          .catch(() => showToast(t("toastShareFail")));
         return;
       }
 
@@ -2009,62 +2000,47 @@
         showPage(btn.dataset.page);
         if (btn.dataset.page === "recommend") {
           state.recoLimit = 8;
-          renderTavÅŸiyeler();
+          renderRecommendations();
         }
       });
     });
 
-    els.geri AlBtn = belge.getElementById("Btn'yi Sil'i geri al");
-    els.geri AlBtn.etkinlik Dinleyicisi ekle("tÄ±kla", () => {
-      eÄŸer (!devlet.oÄŸulsilindi) dÃ¶nÃ¼ÅŸ;
-      iÌ‡nÅŸaat parÃ§acÄ±klar = getsnippet'ler();
-      iÌ‡nÅŸaat Ã§Ã¶p = Ã§Ã¶pÃ¼ Al().sÃ¼zÃ¼ntÃ¼(t => t.kimlik !== devlet.oÄŸulsilindi.kimlik);
-      iÌ‡nÅŸaat geri yÃ¼ksekmek edilmiÅŸ = { ...devlet.oÄŸulsilindi };
-      sil geri yÃ¼ksekmek edilmiÅŸ.silindiAt;
-      parÃ§acÄ±klar.vites deÄŸiÅŸtirme(geri yÃ¼ksekmek edilmiÅŸ);
-      devlet.oÄŸulsilindi = boÅŸ;
-      Ã§Ã¶pÃ¼ Kaydet(Ã§Ã¶p);
-      parÃ§acÄ±ÄŸÄ±'leri kaydet(parÃ§acÄ±klar);
-      renderTÃ¼m();
-      tost gÃ¶ster(t("kÄ±zarmÄ±ÅŸ ekmek Restore edildi"));
-    });
+    window.addEventListener("scroll", maybeLoadMore);
 
-    pencere.etkinlik Dinleyicisi ekle("kaydÄ±r", belkiDaha Fazla YÃ¼ksel);
-
-    belge.etkinlik Dinleyicisi ekle("anahtar kapatma", (etkinlik) => {
-      eÄŸer (etkinlik.anahtar === "KaÃ§Ä±ÅŸ") {
-        kapatDÃ¼zenleModal();
-        dÃ¶nÃ¼ÅŸ;
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeEditModal();
+        return;
       }
-      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar.Alt Kasaya() === "K") {
-        etkinlik.Ã¶nlevarsayÄ±lan();
-        els.arama GiriÅŸi.odunlan();
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        els.searchInput.focus();
       }
-      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar === "Girmek") {
-        eÄŸer (devlet.sayfa === "gÃ¶sterge tablosu") {
-          els.ekleSnippetBtn.tÄ±k tÄ±k();
+      if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+        if (state.page === "dashboard") {
+          els.addSnippetBtn.click();
         }
       }
-      eÄŸer ((etkinlik.ctrlKey || etkinlik.metaKey) && etkinlik.anahtar kaydÄ±r && etkinlik.anahtar.Alt Kasaya() === "f") {
-        etkinlik.Ã¶nlevarsayÄ±lan();
-        devlet.favoriYalnÄ±zca = !devlet.favoriYalnÄ±zca;
-        renderSnippet'ler();
-        renderCollectionFiltre(getsnippet'ler());
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === "f") {
+        event.preventDefault();
+        state.favoriteOnly = !state.favoriteOnly;
+        renderSnippets();
+        renderCollectionFilter(getSnippets());
       }
     });
 
-    dil Uygula();
-    eÄŸer (devlet.maÄŸaza.oturum && devlet.maÄŸaza.oturum.kullanÄ±cÄ±) {
-      giriÅŸler(devlet.maÄŸaza.oturum.kullanÄ±cÄ±);
-    } baÅŸka {
-      gÃ¶steriÅŸ();
+    applyLanguage();
+    if (state.store.session && state.store.session.user) {
+      loginAs(state.store.session.user);
+    } else {
+      showAuth();
     }
 
-    eÄŸer ("hizmet Ã‡alÄ±ÅŸanÄ±" iÃ§inde navigatÃ¶r) {
-      navigatÃ¶r.servisiÅŸÃ§i.kayÄ±t ol("/sw.js").yakalamak(() => {});
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
     }
-  </senaryo>
-</vÃ¼cut>
+  </script>
+</body>
 </html>
 
 
